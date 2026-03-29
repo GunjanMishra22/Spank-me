@@ -416,9 +416,9 @@ function trigger() {
 // and only fire when RMS is BOTH above the hard floor AND a large
 // multiple above the recent baseline. This ignores constant noise.
 
-const HARD_FLOOR     = 0.08;   // absolute minimum RMS — anything softer ignored
-const SPIKE_RATIO    = 3.2;    // must be 3.2× the ambient average
-const SPIKE_DELTA    = 0.07;   // AND must jump at least this much above average
+const HARD_FLOOR     = 0.045;  // lowered — phone taps produce a mid-level thud
+const SPIKE_RATIO    = 2.4;    // lowered — tap spike needs to be 2.4× ambient
+const SPIKE_DELTA    = 0.038;  // lowered — smaller absolute jump still counts
 const HISTORY_LEN    = 25;     // frames to average for baseline (~400ms at 60fps)
 
 let rmsHistory = [];
