@@ -217,9 +217,9 @@ function trigger() {
 }
 
 // ── Detection constants ───────────────────────────────────────────────────
-const HARD_FLOOR  = 0.045;  // absolute RMS floor
-const SPIKE_RATIO = 2.4;    // must be 2.4× the rolling ambient average
-const SPIKE_DELTA = 0.038;  // AND absolute jump above average
+const HARD_FLOOR  = 0.10;   // absolute RMS floor — ignores soft background noise
+const SPIKE_RATIO = 3.5;    // must be 3.5× the rolling ambient average
+const SPIKE_DELTA = 0.08;   // AND absolute jump must be large, not just relative
 const HISTORY_LEN = 25;     // rolling baseline window (~400ms)
 
 let rmsHistory = [];
